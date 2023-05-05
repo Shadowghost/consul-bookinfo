@@ -40,6 +40,8 @@ spec:
       labels:
         app: ratings
         version: v1
+      annotations:
+        consul.hashicorp.com/connect-inject: "true"
     spec:
       serviceAccountName: ratings
       containers:

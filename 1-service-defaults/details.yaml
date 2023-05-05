@@ -40,6 +40,8 @@ spec:
       labels:
         app: details
         version: v1
+      annotations:
+        consul.hashicorp.com/connect-inject: "true"
     spec:
       serviceAccountName: details
       containers:

@@ -41,6 +41,7 @@ spec:
         app: reviews
         version: v1
       annotations:
+        consul.hashicorp.com/connect-inject: "true"
         consul.hashicorp.com/service-meta-version: "v1"
     spec:
       serviceAccountName: reviews
@@ -85,6 +86,7 @@ spec:
         app: reviews
         version: v2
       annotations:
+        consul.hashicorp.com/connect-inject: "true"
         consul.hashicorp.com/service-meta-version: "v2"
         consul.hashicorp.com/connect-service-upstreams: "ratings:9080"
     spec:
@@ -130,6 +132,7 @@ spec:
         app: reviews
         version: v3
       annotations:
+        consul.hashicorp.com/connect-inject: "true"
         consul.hashicorp.com/service-meta-version: "v3"
         consul.hashicorp.com/connect-service-upstreams: "ratings:9080"
     spec:
