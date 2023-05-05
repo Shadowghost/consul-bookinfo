@@ -43,27 +43,23 @@ spec:
         app: productpage
         version: v1
       annotations:
-        "consul.hashicorp.com/connect-inject": "true"
-        "consul.hashicorp.com/connect-service-upstreams": "bookinfo:9080"
+        prometheus.io/scrape: "true"
+        prometheus.io/port: "9080"
+        prometheus.io/path: "/metrics"
+        consul.hashicorp.com/connect-service-upstreams: "bookinfo:9080"
     spec:
       serviceAccountName: productpage
       containers:
       - name: productpage
-        image: docker.io/istio/examples-bookinfo-productpage-v1:1.16.2
-        command: ["python", "productpage.py", "9090"]
+        image: docker.io/istio/examples-bookinfo-productpage-v1:1.17.0
         imagePullPolicy: IfNotPresent
-        env:
-        - name: REVIEWS_HOSTNAME
-          value: "127.0.0.1"
-        - name: RATINGS_HOSTNAME
-          value: "127.0.0.1"
-        - name: DETAILS_HOSTNAME
-          value: "127.0.0.1"
         ports:
-        - containerPort: 9090
+        - containerPort: 9080
         volumeMounts:
         - name: tmp
           mountPath: /tmp
+        securityContext:
+          runAsUser: 1000
       volumes:
       - name: tmp
         emptyDir: {}

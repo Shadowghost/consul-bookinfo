@@ -22,12 +22,12 @@ TODO: diagram comparing Istio vs Consul architecture
 ## Dependencies
 All of these examples use the following images:
 ```bash
-docker.io/istio/examples-bookinfo-details-v1:1.16.2
-docker.io/istio/examples-bookinfo-productpage-v1:1.16.2
-docker.io/istio/examples-bookinfo-ratings-v1:1.16.2
-docker.io/istio/examples-bookinfo-reviews-v1:1.16.2
-docker.io/istio/examples-bookinfo-reviews-v2:1.16.2
-docker.io/istio/examples-bookinfo-reviews-v3:1.16.2
+docker.io/istio/examples-bookinfo-details-v1:1.17.0
+docker.io/istio/examples-bookinfo-productpage-v1:1.17.0
+docker.io/istio/examples-bookinfo-ratings-v1:1.17.0
+docker.io/istio/examples-bookinfo-reviews-v1:1.17.0
+docker.io/istio/examples-bookinfo-reviews-v2:1.17.0
+docker.io/istio/examples-bookinfo-reviews-v3:1.17.0
 ```
 
 All examples are tested with Consul 1.9.0 but many will also work with Consul 1.6.0+
