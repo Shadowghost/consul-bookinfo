@@ -1,0 +1,46 @@
+apiVersion: consul.hashicorp.com/v1alpha1
+kind: ServiceIntentions
+metadata:
+  name: bookinfo
+spec:
+  destination: 
+    name: bookinfo
+  sources:
+    - name: productpage
+      action: allow
+---
+apiVersion: consul.hashicorp.com/v1alpha1
+kind: ServiceIntentions
+metadata:
+  name: details
+spec:
+  destination:
+    name: details
+  sources:
+    - name: productpage
+      action: allow
+---
+apiVersion: consul.hashicorp.com/v1alpha1
+kind: ServiceIntentions
+metadata:
+  name: ratings
+spec:
+  destination:
+    name: ratings
+  sources:
+    - name: productpage
+      action: allow
+    - name: reviews
+      action: allow
+---
+apiVersion: consul.hashicorp.com/v1alpha1
+kind: ServiceIntentions
+metadata:
+  name: review
+spec:
+  destination:
+    name: review
+  sources:
+    - name: productpage
+      action: allow
+---
