@@ -1,0 +1,33 @@
+apiVersion: consul.hashicorp.com/v1alpha1
+kind: ServiceSplitter
+metadata:
+  name: reviews
+spec:
+  splits:
+    - weight: 20
+      service: reviews
+      serviceSubset: v1
+      requestHeaders:  
+        set:
+          x-web-version: from-v1
+      responseHeaders:
+        set:
+          x-web-version: to-v1
+    - weight: 30
+      service: reviews
+      serviceSubset: v2
+      requestHeaders:
+        set:
+          x-web-version: from-v2
+      responseHeaders:
+        set:
+          x-web-version: to-v2
+    - weight: 50
+      service: reviews
+      serviceSubset: v3
+      requestHeaders:
+        set:
+          x-web-version: from-v3
+      responseHeaders:
+        set:
+          x-web-version: to-v3
