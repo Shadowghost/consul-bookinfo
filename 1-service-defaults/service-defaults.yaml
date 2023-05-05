@@ -15,13 +15,6 @@ spec:
 apiVersion: consul.hashicorp.com/v1alpha1
 kind: ServiceDefaults
 metadata:
-  name: bookinfo
-spec:
-  protocol: http
----
-apiVersion: consul.hashicorp.com/v1alpha1
-kind: ServiceDefaults
-metadata:
   name: productpage
 spec:
   protocol: http

@@ -88,7 +88,6 @@ spec:
       annotations:
         consul.hashicorp.com/connect-inject: "true"
         consul.hashicorp.com/service-meta-version: "v2"
-        consul.hashicorp.com/connect-service-upstreams: "ratings:9080"
     spec:
       serviceAccountName: reviews
       containers:
@@ -134,7 +133,6 @@ spec:
       annotations:
         consul.hashicorp.com/connect-inject: "true"
         consul.hashicorp.com/service-meta-version: "v3"
-        consul.hashicorp.com/connect-service-upstreams: "ratings:9080"
     spec:
       serviceAccountName: reviews
       containers:

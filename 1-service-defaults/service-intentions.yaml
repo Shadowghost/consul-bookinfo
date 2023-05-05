@@ -1,12 +1,12 @@
 apiVersion: consul.hashicorp.com/v1alpha1
 kind: ServiceIntentions
 metadata:
-  name: bookinfo
+  name: productpage
 spec:
   destination: 
-    name: bookinfo
+    name: productpage
   sources:
-    - name: productpage
+    - name: ingress-gateway
       action: allow
 ---
 apiVersion: consul.hashicorp.com/v1alpha1
@@ -28,18 +28,16 @@ spec:
   destination:
     name: ratings
   sources:
-    - name: productpage
-      action: allow
     - name: reviews
       action: allow
 ---
 apiVersion: consul.hashicorp.com/v1alpha1
 kind: ServiceIntentions
 metadata:
-  name: review
+  name: reviews
 spec:
   destination:
-    name: review
+    name: reviews
   sources:
     - name: productpage
       action: allow
