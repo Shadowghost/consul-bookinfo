@@ -1,0 +1,43 @@
+apiVersion: consul.hashicorp.com/v1alpha1
+kind: ServiceRouter
+metadata:
+  name: productpage
+spec:
+  routes:
+    - match:
+        http:
+          header:
+            - name: "end-user"
+              exact: "jason"
+          pathPrefix: /reviews
+      destination:
+        service: reviews
+        serviceSubset: "v1"
+    - match:
+        http:
+          header:
+            - name: "end-user"
+              exact: "alice"
+          pathPrefix: /reviews
+      destination:
+        service: reviews
+        serviceSubset: "v2"
+    - match:
+        http:
+          header:
+            - name: "end-user"
+              exact: "bob"
+          pathPrefix: /reviews
+      destination:
+        service: reviews
+        serviceSubset: "v3"
+    - match:
+        http:
+          pathPrefix: /details
+      destination:
+        service: details
+    - match:
+        http:
+          pathPrefix: /ratings
+      destination:
+        service: ratings
