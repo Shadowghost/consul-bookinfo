@@ -41,9 +41,6 @@ spec:
         app: productpage
         version: v1
       annotations:
-        prometheus.io/scrape: "true"
-        prometheus.io/port: "9080"
-        prometheus.io/path: "/metrics"
         consul.hashicorp.com/connect-inject: "true"
     spec:
       serviceAccountName: productpage
